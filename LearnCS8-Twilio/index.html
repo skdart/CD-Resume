@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Cute, funny and scary costumes for your pet turtle!">
+    <meta name="author" content="862210962">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Turtle Costumes -->
+    <title>Turtle Costumes!</title>
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+    <!-- Top Menu Bar -->
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-1" href="https://google.com" target="_blank" >Product</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-2" href="https://unsplash.com/s/photos/koi-fish" target="_blank" >Amphibians</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-3" href="https://en.wikipedia.org/wiki/Main_Page" target="_blank"> Support</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-4" href="https://www.youtube.com/" target="_blank">Sign Up</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-5" href="https://www.nhl.com/"target="_blank" >Features</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-6" href="https://www.nytimes.com/" target="_blank">Adventure</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-7" href="https://chassstudentaffairs.ucr.edu/breadth_requirements/index.html" target="_blank">News</a>
+    </div>
+</nav>
+<!-- Yearly Turtle Constumes-->
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-0 text-center bg-light">
+    <div class="col-md-8 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Order Turtle Costumes Today!</h1>
+        <p class="lead font-weight-normal">Made from sustainable, eco-friendly materials, the turtle costumes we provide are lightweight and perfect for your turtle!</p>
+        <a class="btn btn-outline-secondary" href="https://en.wikipedia.org/wiki/Main_Page">Coming soon</a>
+    </div>
+</div>
+<!-- Left Tile -->
+<div class="d-md-flex flex-md-equal w-100">
+    <div class="bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">Sign up</h2>
+            <p class="lead">Sign up now to get instant access to our educational content</p>
+        </div>
+        <!-- Web form when submitted will send a text message -->
+        <form class="p-2" onsubmit="sendTextMessage(); return false;">
+            <!-- Full Name Form Field -->
+            <div class="form-group">
+                <label for="example-first-name">Full Name</label>
+                <input type="text" value="Full Name" class="form-control" id="example-first-name" aria-describedby="emailHelp">
+            </div>
+            <!-- Phone Number Form Field -->
+            <div class="form-group">
+                <label for="example-tel-input">Phone number</label>
+                <input type="tel" class="form-control" value="1408555555" id="example-tel-input">
+            </div>
+            <!-- JavaScript that handles onSubmit logic -->
+            <!-- Configure the XHR request below with your own credentials -->
+            <script>
+            function sendTextMessage() {
+                console.log("Hello world!");
+                var xhr = new XMLHttpRequest();
+                var accountSID = "AC15c3780fc2f22fe15cf3d2909e498f4b";
+                var authToken = "8e0c27b48670032d5f5b49bcab8334f3";
+                var base64encoded = accountSID + ":" + authToken;
+                var params = "To=" + document.getElementById('example-tel-input').value + "&From=" + "12534444185" + "&Body=" + "Hello " + document.getElementById('example-first-name').value + "Turtles."
+                xhr.open("POST", "https://api.twilio.com/2010-04-01/Accounts/" + accountSID + "/Messages.json", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.setRequestHeader('Authorization', 'Basic ' + btoa(base64encoded));
+                xhr.send(params);
+            }
+            </script>
+            <!-- Submit button that will execute the sendTextMessage function -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+   <!-- Right Tile -->
+    <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5">Another Section</h2>
+            <p class="lead">A great product for you and your pet!</p>
+            <img class="mx-auto" src="Turtle.jpeg" height="250px">
+        </div>
+        <div class="mx-auto" style="width: 80%; height: 100px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+</div>
+  </body>
+</html>
